@@ -1,0 +1,3 @@
+    USE WITH ACTION STATEMENT
+
+document.FGame.HighLow.value = 'Got It!';

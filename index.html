@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html>
 
 <head>
   <title> </title>
@@ -8,92 +8,30 @@
   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="style.css" type="text/css"></script>
-  <script src="module.js" type="text/javascript"></script>
-
-  <script>
-    var RNumber;
-    var RTries;
-    limit = 50;
-
-    function Random() {
-      today = new Date();
-      num = today.getTime();
-      num = Math.round(Math.abs(Math.sin(num) * 1000000)) % limit;
-      return num;
-    }
-
-    function Init() {
-      RNumber = Random();
-      RTries = 0;
-      document.FGame.Output.value = 'I am thinking of a number between 0 and ' + (limit - 1) + ' Guess it....';
-      document.FGame.Tries.value = RTries;
-      document.FGame.HighLow.value = '';
-      document.FGame.Input.value = '';
-    }
-
-    function Game(Number) {
-      if (Number == RNumber) {
-        RTries++;
-        document.FGame.Output.value = 'You guessed it in ' + RTries + ' tries! It was ' + RNumber + '! Hit Restart to play again.';
-        document.FGame.HighLow.value = 'Got It!';
-      } else {
-        RTries++;
-        document.FGame.Output.value = 'Nope, ' + Number + ' is not the number I am thinking about!';
-        document.FGame.HighLow.value = (RNumber > Number) ? 'Higher!' : 'Lower!';
-        document.FGame.Tries.value = RTries;
-      }
-    }
-  </script>
-
 </head>
 
-<body ng-controller="myCtrl">
+<body>
 
   <ul class="nav nav-pills nav-justified">
-    <li class="active"><a><strong>App</strong></a></li>
+    <li class="active"><a><strong>Long Distance Couples Game</strong></a></li>
   </ul>
 
   <div class="user">
     <input class="center-block" type="file">
   </div>
 
-  <container>
-    <script>
-      $("input").change(function(e) {
-        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-          var file = e.originalEvent.srcElement.files[i];
-          var img = document.createElement("img");
-          var reader = new FileReader();
-          reader.onloadend = function() {
-            img.src = reader.result;
-          }
-          reader.readAsDataURL(file);
-          $("input").after(img);
-        }
-      });
-    </script>
-  </container>
-
+  <!-- Game -->
   <center>
-    <FORM NAME="FGame">
-      <INPUT TYPE="txt" NAME="Output" VALUE="" Size="70"><br>
-      <INPUT TYPE="txt" NAME="Input" VALUE='' Size="20"> The number is:
-      <INPUT TYPE="txt" NAME="HighLow" VALUE='' Size="20"> You guessed:
-      <INPUT TYPE="txt" NAME="Tries" VALUE="0" SIZE="3"> Times.<br>
-      <INPUT TYPE="button" NAME="one" VALUE="1" OnClick="FGame.Input.value += 1">
-      <INPUT TYPE="button" NAME="one" VALUE="2" OnClick="FGame.Input.value += 2">
-      <INPUT TYPE="button" NAME="one" VALUE="3" OnClick="FGame.Input.value += 3"><br>
-      <INPUT TYPE="button" NAME="one" VALUE="4" OnClick="FGame.Input.value += 4">
-      <INPUT TYPE="button" NAME="one" VALUE="5" OnClick="FGame.Input.value += 5">
-      <INPUT TYPE="button" NAME="one" VALUE="6" OnClick="FGame.Input.value += 6"><br>
-      <INPUT TYPE="button" NAME="one" VALUE="7" OnClick="FGame.Input.value += 7">
-      <INPUT TYPE="button" NAME="one" VALUE="8" OnClick="FGame.Input.value += 8">
-      <INPUT TYPE="button" NAME="one" VALUE="9" OnClick="FGame.Input.value += 9"><br>
-      <INPUT TYPE="button" NAME="one" VALUE="0" OnClick="FGame.Input.value += 0">
-      <INPUT TYPE="button" NAME="DoIt" VALUE="Try it!  " OnClick="Game(FGame.Input.value); FGame.Input.value=''"><br>
-      <INPUT TYPE="button" NAME="init" VALUE="Start/Restart" OnClick="Init()">
-    </FORM>
+    <input type="button" class="btn btn-primary btn-lg" id="start" value="Start">
+    <br></br>
+
+    <input type="text" id="guess">
+    <button class="btn btn-primary btn-lg" id="submit">Guess</button>
+    <br></br>
+
+    <div>
+      <input type="text" id="hint" style="width:250px">
+    </div>
   </center>
 
 
@@ -119,6 +57,7 @@
 
 
 
+  <script src="app.js" type="text/javascript"></script>
 
 </body>
 
