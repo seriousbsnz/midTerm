@@ -11,11 +11,30 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<body ng-controller='myCtrl as ctrl'>
-	
-  <ul class="nav nav-pills nav-justified">
+<body>
+    <ul class="nav nav-pills nav-justified">
 	<li class="active"><a><strong>Couples Long Distance Relationship App</strong></a></li>
 </ul>
+  
+  
+  
+  <div ng-controller="uploadController">
+			<form>
+				<input type="file" ng-file-select="onFileSelect($files)">
+				<!--  <input type="file" ng-file-select="onFileSelect($files)" multiple> -->
+
+			</form>
+			<b>Preview:</b><br />
+			<i ng-hide="imageSrc">No image choosen</i>
+			<img ng-src="{{imageSrc}}" /><br/>
+		</div>
+  
+  
+  
+  
+  
+  <div ng-controller='myCtrl'>
+	
 	
   <!-- View -->
   <div class="container " ng-controller="myCtrl" style="min-width:600px">
@@ -59,8 +78,10 @@
 
 
   </div>
+</div>
 
   <script src="app.js" type="text/javascript"></script>
+  <script src="upload.js" type="text/javascript"></script>
   
 
 </body>
