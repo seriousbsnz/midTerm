@@ -1,14 +1,9 @@
-.pull-down{
-	margin-top: 20px;
-}
+/*.pull-down{*/
+/*	margin-top: 20px;*/
+/*}*/
 
-.pull-down-div{
-	margin-top: 175px;
-}
+/*.pull-down-div{*/
+/*	margin-top: 175px;*/
+/*}*/
 
-div {
-	border-color:gray;
-	border-radius:1em;
-	border-style:solid;
-	padding:10px;
-}
+style='border-radius:2px;border-style:solid;border-color:black'
