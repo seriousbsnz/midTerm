@@ -1,10 +1,14 @@
-.col-lg-2 ,.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-8, .col-lg-1 {
-	border-radius:1em;
-	border-style:solid;
-	border-color:gray;
+.pull-down{
+	margin-top: 20px;
 }
 
-/* #guess {
+.pull-down-div{
+	margin-top: 175px;
+}
+
+div {
+	border-color:gray;
 	border-radius:1em;
 	border-style:solid;
-} */
+	padding:10px;
+}
