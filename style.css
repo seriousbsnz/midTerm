@@ -1,9 +1,12 @@
-/*.pull-down{*/
-/*	margin-top: 20px;*/
-/*}*/
-
-/*.pull-down-div{*/
-/*	margin-top: 175px;*/
-/*}*/
-
-style='border-radius:2px;border-style:solid;border-color:black'
+.box {
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+  background: -webkit-linear-gradient(black, #ccc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(black, #ccc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(black, #ccc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(black, #ccc); /* Standard syntax */
+}
